@@ -11,6 +11,8 @@ router.use(
     bodyparser.json()
 );
 router.post('/Bing_bot', (req,res)=>{
+    console.log(JSON.stringify(req.body));
+
     if(req.body.intent.displayName === 'Students'){
         return res.json({
             "payload": {
