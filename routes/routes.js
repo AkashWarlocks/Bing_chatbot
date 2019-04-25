@@ -1,12 +1,13 @@
-const express = require('express')
 const bodyparser = require('body-parser');
+const express = require('express')
+router = express()
 
-app.use(
+router.use(
     bodyparser.urlencoded({
         extended: false
     })
 );
-app.use(
+router.use(
     bodyparser.json()
 );
 router.post('/Bing_bot', (req,res)=>{
@@ -30,4 +31,4 @@ router.post('/Bing_bot', (req,res)=>{
     }
 
 })
-router = express()
+module.exports = router
