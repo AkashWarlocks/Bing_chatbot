@@ -13,7 +13,7 @@ router.use(
 router.post('/Bing_bot', (req,res)=>{
     console.log(JSON.stringify(req.body));
 
-    if(req.body.intent.displayName === 'Students'){
+    if(req.body.queryResult.intent.displayName === 'Students'){
         return res.json({
             "payload": {
                 "google": {
