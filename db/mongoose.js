@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
-
-mongoose.connect("mongodb://localhost:27017/Bing_bot", {
+const uri = "mongodb+srv://user:mruaka123@cluster0-3awwl.mongodb.net/test?retryWrites=true";
+mongoose.connect(uri, {
     useNewUrlParser:true,
     useCreateIndex:true
 })
