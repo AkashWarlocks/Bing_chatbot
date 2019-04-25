@@ -1,7 +1,8 @@
 const mongoose = require('mongoose')
-const uri = "mongodb+srv://userDB:userdb123@cluster0-3awwl.mongodb.net/bing_bot?retryWrites=true";
+const uri = "mongodb+srv://userDB:userdb123@cluster0-3awwl.mongodb.net/b";
 mongoose.connect(uri, {
-    useNewUrlParser:true,
+    dbName: 'bing_bot',
+    useNewUrlParser:true
 }).catch((e)=>{
     console.log('Database connectivity error ',e)
 })
