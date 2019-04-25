@@ -15,9 +15,9 @@ router.use(
 );
 router.post('/Bing_bot', (req,res)=>{
     console.log(JSON.stringify(req.body));
-
+    const _id = "5cc223085e267315608f0c28"
     if(req.body.queryResult.intent.displayName === 'Students'){
-      Student.find().then((data)=>{
+      Student.findById(_id).then((data)=>{
         console.log('data: ', data)
         return res.json({
           "payload": {
