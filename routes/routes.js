@@ -10,7 +10,7 @@ app.use(
     bodyparser.json()
 );
 router.post('/Bing_bot', (req,res)=>{
-    if(req.body.intent.name === 'Students'){
+    if(req.body.intent.displayName === 'Students'){
         return res.json({
             "payload": {
                 "google": {
