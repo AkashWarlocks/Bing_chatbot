@@ -1,0 +1,24 @@
+{
+  "name": "bing_chatbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AkashWarlocks/Bing_chatbot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AkashWarlocks/Bing_chatbot/issues"
+  },
+  "homepage": "https://github.com/AkashWarlocks/Bing_chatbot#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mongodb": "^3.2.3",
+    "mongoose": "^5.5.3"
+  }
+}
