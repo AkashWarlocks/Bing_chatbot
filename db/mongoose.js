@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const uri = "mongodb+srv://userDB:userdb123@cluster0-3awwl.mongodb.net/bing_bot";
+const uri = "mongodb+srv://userDB:userdb123@cluster0-3awwl.mongodb.net";
 mongoose.connect(uri, {
     dbName: "bing_bot"
 }).then((conn)=>{
