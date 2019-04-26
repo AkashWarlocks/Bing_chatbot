@@ -23,9 +23,9 @@ const MongoClient = require('mongodb').MongoClient;
 //    })
 
 //    const data = collection.find()
-//    console.log('data:1 ',data)
-   client.close();
-});
+// //    console.log('data:1 ',data)
+//    client.close();
+// });
 
 app.use(
     bodyParser.json()
