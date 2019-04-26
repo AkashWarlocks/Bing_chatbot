@@ -1,6 +1,7 @@
-const mongoose = require('../db/mongoose')
+const mongoose = require('mongoose')
 
-const Student = mongoose.model('student',{
+
+const Student = mongoose.model('students',{
     StudentName:{
         type:String
     },

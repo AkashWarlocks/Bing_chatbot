@@ -8,24 +8,32 @@ const port = process.env.PORT || 3000
 const MongoClient = require('mongodb').MongoClient;
 
 // replace the uri string with your connection string.
-const uri = "mongodb+srv://userDB:userdb123@cluster0-3awwl.mongodb.net/bing_bot"
-MongoClient.connect(uri, function(err, client) {
-   if(err) {
-        console.log('Error occurred while connecting to MongoDB Atlas...\n',err);
-   }
-   console.log('Connected...');
-   const collection = client.db("bing_bot").collection("student");
-   // perform actions on the collection object
-   collection.findOne({
-       "StudentName":"Test"
-   }).then((d)=>{
-       console.log('data: ',d)
-   })
+// const uri = "mongodb+srv://userDB:userdb123@cluster0-3awwl.mongodb.net/bing_bot"
+// MongoClient.connect(uri, function(err, client) {
+//    if(err) {
+//         console.log('Error occurred while connecting to MongoDB Atlas...\n',err);
+//    }
+//    console.log('Connected...');
+//    const collection = client.db("bing_bot").collection("student");
+//    // perform actions on the collection object
+//    collection.findOne({
+//        "StudentName":"Test"
+//    }).then((d)=>{
+//        console.log('data: ',d)
+//    })
 
-   const data = collection.find()
-   console.log('data:1 ',data)
-   client.close();
-});
+//    const data = collection.find()
+//    console.log('data:1 ',data)
+//    client.close();
+// });
+function myFn (){
+    Student.find().then((data)=>{
+        console.log('data:1 ',data)
+    }).catch((e)=>{
+        console.log('data:1 ',e)
+    })
+}
+myFn()
 
 app.use(
     bodyParser.json()

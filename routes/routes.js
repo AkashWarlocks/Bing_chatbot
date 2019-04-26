@@ -1,4 +1,4 @@
-const mongoose = require('../db/mongoose')
+require('../db/mongoose')
 const Student = require('../model/student')
 //const MongoClient = require('mongodb').MongoClient;
 // const uri = "mongodb+srv://user:mruaka123@cluster0-3awwl.mongodb.net/admin?retryWrites=true";
