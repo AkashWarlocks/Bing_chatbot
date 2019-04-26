@@ -1,4 +1,4 @@
-require('../db/mongoose')
+const mongoose = require('../db/mongoose')
 const Student = require('../model/student')
 //const MongoClient = require('mongodb').MongoClient;
 // const uri = "mongodb+srv://user:mruaka123@cluster0-3awwl.mongodb.net/admin?retryWrites=true";
@@ -24,11 +24,11 @@ router.use(
 router.use(
     bodyparser.json()
 );
-router.post('/Bing_bot', (req,res)=>{
+router.post('/Bing_bot',async (req,res)=>{
     console.log(JSON.stringify(req.body));
     const _id = "5cc223085e267315608f0c28"
     if(req.body.queryResult.intent.displayName === 'Students'){
-      Student.findById(_id).then((data)=>{
+     await mongoose.Student.findById(_id).then((data)=>{
         console.log('data: ', data)
         return res.json({
           "payload": {
