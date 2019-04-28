@@ -4,6 +4,7 @@ const Faculty = require('../model/faculty')
 hObj.showFaculty = async(req,res)=>{
     try{
         const faculty = await Faculty.find()
+        console.log('Faculty : ',faculty)
         if(faculty.length === 0){
             return res.json({
                 "fulfillmentText": "This is a text response",
