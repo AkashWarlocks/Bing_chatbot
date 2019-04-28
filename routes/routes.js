@@ -28,7 +28,7 @@ router.use(
     bodyparser.json()
 );
 router.post('/Bing_bot',async (req,res)=>{
-    console.log(JSON.stringify(req.body));
+   // console.log(JSON.stringify(req.body));
     const _id = "5cc29f0ffb6fc0265f298890"
     if(req.body.result.metadata.intentName === 'Students'){
       
