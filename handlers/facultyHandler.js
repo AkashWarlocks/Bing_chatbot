@@ -27,17 +27,16 @@ hObj.showFaculty = async(req,res)=>{
     var i;
     for (i = 0; i<faculty_db.facultydata.length; i++) {
     console.log(faculty_db.facultydata[i].facultyName)
-      resp.push({                  
-        "optionInfo": {
-                        "key": faculty_db.facultydata[i].facultyID
-                      },
-                      "description": "Faculty ID"+faculty_db.facultydata[i].facultyID,
-                      "image": {
-                        "url": "https://developers.google.com/actions/images/badges/XPM_BADGING_GoogleAssistant_VER.png",
-                        "accessibilityText": "first alt"+faculty_db.facultydata[i].facultyID,
-                      },
-                      "title": "Faculty Name" +faculty_db.facultydata[i].facultyName
-                })
+      resp.push(
+        {
+          "optionInfo": {
+            "key": faculty_db.facultydata[i].facultyID,
+          },
+          "description": faculty_db.facultydata[i].facultyID,
+          "image": {},          
+          "title": faculty_db.facultydata[i].facultyName
+        },
+      )
               }
       console.log(resp)  
 
@@ -62,7 +61,31 @@ hObj.showFaculty = async(req,res)=>{
               "@type": "type.googleapis.com/google.actions.v2.OptionValueSpec",
               "listSelect": {
                 "title": "Hello",
-                "items": resp              }
+                "items": [
+                  {
+                    "optionInfo": {
+                      "key": "first title"
+                    },
+                    "description": "first description",
+                    "image": {
+                      "url": "https://developers.google.com/actions/images/badges/XPM_BADGING_GoogleAssistant_VER.png",
+                      "accessibilityText": "first alt"
+                    },
+                    "title": "first title"
+                  },
+                  {
+                    "optionInfo": {
+                      "key": "second"
+                    },
+                    "description": "second description",
+                    "image": {
+                      "url": "https://lh3.googleusercontent.com/Nu3a6F80WfixUqf_ec_vgXy_c0-0r4VLJRXjVFF_X_CIilEu8B9fT35qyTEj_PEsKw",
+                      "accessibilityText": "second alt"
+                    },
+                    "title": "second title"
+                  }
+                ]
+              }
             }
           }
         }
