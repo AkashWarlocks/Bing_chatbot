@@ -35,40 +35,18 @@ router.post('/Bing_bot',async (req,res)=>{
      await Student.findById(_id).then((data)=>{
         console.log('data: ', data)
         return res.json({
-          "payload": {
-              "google": {
-                "expectUserResponse": true,
-                "richResponse": {
-                  "items": [
-                    {
-                      "simpleResponse": {
-                        "textToSpeech": "this is a simple response with "+data
-                      }
-                    }
-                  ]
-                }
-              }
-            }
+          speech: "Can I know your good name please ?",
+              displayText: "Can I know your name ?",
+              source:"google"
       })
 
     }).catch((e)=>{
         console.log('error: ',e)
         return res.json({
-          "payload": {
-              "google": {
-                "expectUserResponse": true,
-                "richResponse": {
-                  "items": [
-                    {
-                      "simpleResponse": {
-                        "textToSpeech": "error"
-                      }
-                    }
-                  ]
-                }
-              }
-            }
-      })
+          speech: "Can I know your good name please ?",
+          displayText: "Can I know your name ?",
+          source:"google"  
+        })
 
     })
   }
