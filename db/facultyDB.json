@@ -1,0 +1,28 @@
+{
+    "facultydata":[
+        {
+            "facultyName" : "Sam Curan",
+            "facultyContact" : "123432",
+            "facultyID" : "BFA#01",
+            "facultyEmail" : "aka@a.com",
+            "facultyCourse" : "Database Management",
+            "officeHours" : "5"
+        },
+        {
+            "facultyName" : "Andre Russel",
+            "facultyContact" : "123432",
+            "facultyID" : "BFA#01",
+            "facultyEmail" : "aka@a.com",
+            "facultyCourse" : "Operating SYstems",
+            "officeHours" : "5"
+        },
+        {
+            "facultyName" : "Zi Longi",
+            "facultyContact" : "123432",
+            "facultyID" : "BFA#01",
+            "facultyEmail" : "aka@a.com",
+            "facultyCourse" : "Database Management",
+            "officeHours" : "5"
+        }
+    ]
+}

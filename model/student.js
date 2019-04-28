@@ -7,7 +7,7 @@ const studentSchema = new mongoose.Schema({
     Contact:{
         type:String
     },
-    Email:{
+    EmailN:{
         type:String
     },
     BNo:{
