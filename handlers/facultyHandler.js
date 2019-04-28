@@ -24,23 +24,48 @@ hObj.showFaculty = async(req,res)=>{
           }
     })
 }   else  {
+    var resp= []
+    var i;
+    for (i = 0; i<faculty_db.facultydata.length; i++) {
+    
+      resp.push({
+                        
+        "optionInfo": {
+                        "key": faculty_db.facultydata[i].facultyID
+                      },
+                      "description": "Faculty ID"+faculty_db.facultydata[i].facultyID,
+                      "image": "",
+                      "title": "Faculty Name" +faculty_db.facultydata[i].facultyName,
+                    
+                })
+              }  
 
     return res.json({
         "fulfillmentText": "This is a text response",
         "payload": {
-            "google": {
-              "expectUserResponse": true,
-              "richResponse": {
-                "items": [
-                  {
-                    "simpleResponse": {
-                      "textToSpeech": "List of Faculty coming soon"
-                    }
+          "google": {
+            "expectUserResponse": true,
+            "richResponse": {
+              "items": [
+                {
+                  "simpleResponse": {
+                    "textToSpeech": "Choose a item"
                   }
-                ]
+                }
+              ]
+            },
+            "systemIntent": {
+              "intent": "actions.intent.OPTION",
+              "data": {
+                "@type": "type.googleapis.com/google.actions.v2.OptionValueSpec",
+                "listSelect": {
+                  "title": "Hello",
+                  "items": resp
+                }
               }
             }
           }
+        }
     })
 }
 
