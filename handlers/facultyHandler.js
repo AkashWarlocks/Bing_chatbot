@@ -40,30 +40,37 @@ hObj.showFaculty = async(req,res)=>{
               }  
 
     return res.json({
-        "payload": {
-          "google": {
-            "expectUserResponse": true,
-            "richResponse": {
-              "items": [
-                {
-                  "simpleResponse": {
-                    "textToSpeech": "Choose a item"
-                  }
+      "speech": "Okay I will get list of issues raised in the form of list",
+      "displayText": "Now you can see all the issue raised.",
+      "data": {
+        "google": {
+          "expectUserResponse": true,
+      
+          "richResponse": {
+            "items": [
+              {
+                "simpleResponse": {
+                  "textToSpeech": "Okay you can view the list of issues raised.  \nClick on any issue to see the details"
                 }
-              ]
-            },
-            "systemIntent": {
-              "intent": "actions.intent.OPTION",
-              "data": {
-                "@type": "type.googleapis.com/google.actions.v2.OptionValueSpec",
-                "listSelect": {
-                  "title": "Hello",
-                  "items": resp
-                }
+              }
+            ]
+          },
+          "systemIntent": {
+            "intent": "actions.intent.OPTION",
+            "data": {
+              "@type": "type.googleapis.com/google.actions.v2.OptionValueSpec",
+              "listSelect": {
+                "title": "Issue List",
+                "items":resp,
               }
             }
           }
         }
+      
+      },
+    });
+  }
+}
     })
 }
 
