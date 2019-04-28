@@ -10,4 +10,4 @@ mongoose.connect(heroku_uri, {
 }).catch((e)=>{
     console.log('Database connectivity error ',e)
 })
-
+module.exports = mongoose

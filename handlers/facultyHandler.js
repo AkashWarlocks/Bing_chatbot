@@ -1,9 +1,12 @@
-let hObj = {}
 require('../db/mongoose')
 const Faculty = require('../model/faculty')
+const Student = require('../model/student')
+
+
+let hObj = {}
 hObj.showFaculty = async(req,res)=>{
     try{
-        const faculty = await Faculty.find()
+        const faculty = await Student.find()
         console.log('Faculty : ',faculty)
         if(faculty.length === 0){
             return res.json({
@@ -42,7 +45,7 @@ hObj.showFaculty = async(req,res)=>{
                   }
             })
         }
-    }catch{
+    }catch(e){
         return res.json({
             "fulfillmentText": "This is a text response",
             "payload": {

@@ -1,4 +1,4 @@
-const mongoose = require('mongoose')
+const mongoose = require('../db/mongoose')
 
 const studentSchema = new mongoose.Schema({
     StudentName:{
@@ -20,4 +20,4 @@ const studentSchema = new mongoose.Schema({
 })
 
 const Student = mongoose.model('students',studentSchema)
- module.exports = Student
+module.exports = Student

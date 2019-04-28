@@ -4,6 +4,8 @@ let routes = require('./routes/routes')
 const app = express()
 require('./db/mongoose')
 const Student = require('./model/student')
+const Faculty = require('./model/faculty')
+
 const port = process.env.PORT || 3000
 const MongoClient = require('mongodb').MongoClient;
 
