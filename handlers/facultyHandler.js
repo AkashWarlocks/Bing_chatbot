@@ -40,7 +40,6 @@ hObj.showFaculty = async(req,res)=>{
               }  
 
     return res.json({
-        "fulfillmentText": "This is a text response",
         "payload": {
           "google": {
             "expectUserResponse": true,
