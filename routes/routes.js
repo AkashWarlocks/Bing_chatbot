@@ -30,7 +30,7 @@ router.use(
 router.post('/Bing_bot',async (req,res)=>{
     console.log(JSON.stringify(req.body));
     const _id = "5cc29f0ffb6fc0265f298890"
-    if(req.body.queryResult.intent.displayName === 'Students'){
+    if(req.body.result.metadata.intentName === 'Students'){
       
      await Student.findById(_id).then((data)=>{
         console.log('data: ', data)
@@ -72,7 +72,7 @@ router.post('/Bing_bot',async (req,res)=>{
 
     })
   }
-  else if(req.body.queryResult.intent.displayName === 'showFaculty'){
+  else if(req.body.result.metadata.intentName === 'showFaculty'){
     facultyHandler.showFaculty(req,res)
   }
 

@@ -4,7 +4,7 @@ let routes = require('./routes/routes')
 const app = express()
 require('./db/mongoose')
 
-//const Student = require('./model/student')
+const Student = require('./model/student')
 const Faculty = require('./model/faculty')
 const Course = require('./model/courses')
 
@@ -31,8 +31,8 @@ const port = process.env.PORT || 3000
 // });
 async function myFn(){
     try{
-        const id = "5cc570204d105d4fac9c91f8"
-        const data = await Faculty.find()
+        //const id = "5cc570204d105d4fac9c91f8"
+        const data = await Student.find()
         console.log("student",data)
     }catch(e){
         console.log(e)
