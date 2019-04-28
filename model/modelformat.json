@@ -1,0 +1,23 @@
+{
+    "student":{
+        "StudentName":"",
+        "Contact":"",
+        "Email":"",
+        "BNo":"",
+        "Year":""
+
+    },
+    "faculty":{
+        "facultyName":"",
+        "facultyContact":"",
+        "facultyID":"",
+        "facultyEmail":"",
+        "facultyCourse":"",
+        "officeHours":""
+    },
+    "course":{
+        "courseName":"",
+        "courseID":"",
+        "examDate":""
+    }
+}

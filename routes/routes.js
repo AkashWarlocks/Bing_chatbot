@@ -1,5 +1,6 @@
 require('../db/mongoose')
 const Student = require('../model/student')
+let facultyHandler = require('../handlers/facultyHandler')
 //const MongoClient = require('mongodb').MongoClient;
 // const uri = "mongodb+srv://user:mruaka123@cluster0-3awwl.mongodb.net/admin?retryWrites=true";
 // const client = new MongoClient(uri, { useNewUrlParser: true });
@@ -68,7 +69,10 @@ router.post('/Bing_bot',async (req,res)=>{
       })
 
     })
-            }
+  }
+  else if(req.body.queryResult.intent.displayName === 'showFaculty'){
+    facultyHandler.showFaculty(req,res)
+  }
 
 })
 module.exports = router
