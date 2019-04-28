@@ -1,7 +1,7 @@
 let hObj = {}
 require('../db/mongoose')
 const Faculty = require('../model/faculty')
-hObj.showFaculty = (req,res)=>{
+hObj.showFaculty = async(req,res)=>{
     try{
         const faculty = await Faculty.find()
         if(faculty.length === 0){
