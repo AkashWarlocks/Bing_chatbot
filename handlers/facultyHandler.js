@@ -7,7 +7,6 @@ let hObj = {}
 hObj.showFaculty = async(req,res)=>{
   if(faculty_db.facultydata.length ===0){
     return res.json({
-        "fulfillmentText": "This is a text response",
         "payload": {
             "google": {
               "expectUserResponse": true,
