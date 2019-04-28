@@ -68,9 +68,6 @@ hObj.showFaculty = async(req,res)=>{
         }
       
       },
-    });
-  }
-}
     })
 }
 
