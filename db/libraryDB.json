@@ -1,0 +1,32 @@
+{
+    "library_data":[
+        {
+            "day":"Monday",
+            "timing":"9 AM to 9 PM"
+        },
+        {
+            "day":"Tuesday",
+            "timing":"9 AM to 9 PM"
+        },
+        {
+            "day":"Wednesday",
+            "timing":"9 AM to 9 PM"
+        },
+        {
+            "day":"Thursday",
+            "timing":"9 AM to 9 PM"
+        },
+        {
+            "day":"Friday",
+            "timing":"9 AM to 9 PM"
+        },
+        {
+            "day":"Saturday",
+            "timing":"9 AM to 5 PM"
+        },
+        {
+            "day":"Sunday",
+            "timing":"9 AM to 5 PM"
+        }
+    ]
+}
