@@ -2,30 +2,37 @@
     "library_data":[
         {
             "day":"Monday",
+            "code":1,
             "timing":"9 AM to 9 PM"
         },
         {
             "day":"Tuesday",
+            "code":2,
             "timing":"9 AM to 9 PM"
         },
         {
             "day":"Wednesday",
+            "code":3,
             "timing":"9 AM to 9 PM"
         },
         {
             "day":"Thursday",
+            "code":4,
             "timing":"9 AM to 9 PM"
         },
         {
             "day":"Friday",
+            "code":5,
             "timing":"9 AM to 9 PM"
         },
         {
             "day":"Saturday",
+            "code":6,
             "timing":"9 AM to 5 PM"
         },
         {
             "day":"Sunday",
+            "code":0,
             "timing":"9 AM to 5 PM"
         }
     ]
