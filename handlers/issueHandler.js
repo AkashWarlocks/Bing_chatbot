@@ -23,7 +23,8 @@ hObj.raiseIssue = async(req,res) =>{
                         "items": [
                           {
                             "simpleResponse": {
-                              "textToSpeech": "Can you tell me the priority of the issue ?"
+                              "textToSpeech": "Following are the types of issues you can Raise please select one of them from the suggestion chips provided below",
+                              "displayText":"**ISSUE LIST**  \n1. Hardware  \n2.Internet  \3.Account  \n4.ID card"
                             }
                           },
                           
