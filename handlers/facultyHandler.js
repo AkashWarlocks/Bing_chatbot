@@ -100,6 +100,7 @@ hObj.showFaculty_single = async(req,res)=>{
       single_faculty.officeHours = faculty_db.facultydata[i].officeHours
     }
   }
+  console.log("single emp", single_faculty)
   res.json({
         "speech": "Name of Faculty is "+single_faculty.facultyName,
         "displayText": "This card contains all the details of ticket you have selected",   
