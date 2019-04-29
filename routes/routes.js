@@ -59,7 +59,7 @@ router.post('/Bing_bot',async (req,res)=>{
   }else if(req.body.result.metadata.intentName === 'showCourses'){
     courseHandler.showCourses(req,res)
   } else if(req.body.result.metadata.intentName === 'showCourses_followUp'){
-    courseHandler.single_course(req,res)
+    courseHandler.singleCourse(req,res)
   }
 
 })
