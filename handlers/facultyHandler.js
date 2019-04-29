@@ -73,6 +73,67 @@ hObj.showFaculty = async(req,res)=>{
     })
 }
 
+
+
 }
+hObj.showFaculty_single = async(req,res)=>{
+      
+  var id = req.body.result &&
+      req.body.result.parameters &&
+      req.body.result.parameters.id;
+  
+  var single_faculty = {
+    "facultyName":"",
+    "facultyContact":"",
+    "facultyID":"",
+    "facultyEmail":"",
+    "facultyCourse":"",
+    "officeHours":""
+  }
+  for(var i=0;i<faculty_db.facultydata.length;i++){
+    if(faculty_db.facultydata[i].facultyID === id){
+      single_faculty.facultyName = faculty_db.facultydata[i].facultyName
+      single_faculty.facultyCourse = faculty_db.facultydata[i].facultyCourse
+      single_faculty.facultyID = faculty_db.facultydata[i].facultyID
+      single_faculty.facultyEmail = faculty_db.facultydata[i].facultyEmail
+      single_faculty.facultyContact = faculty_db.facultydata[i].facultyContact
+      single_faculty.officeHours = faculty_db.facultydata[i].officeHours
+    }
+  }
+  res.json({
+        "speech": "Name of Faculty is "+single_faculty.facultyName,
+        "displayText": "This card contains all the details of ticket you have selected",   
+        "data": {
+          "google": {
+            "expectUserResponse": true,
+            "richResponse": {
+              "items": [
+                {
+                  "simpleResponse": {
+                    "textToSpeech": "This are the details"
+                  }
+                },
+                {
+                  "basicCard": {
+                      "title": "Facutly Name" +single_faculty.facultyName,
+                      "subtitle":"ID " +single_faculty.facultyID,
+                      "formattedText": "**Contact:** " +single_faculty.facultyContact+"  \n**Email:** "+single_faculty.facultyCourse+"  \n**Courses:** "+single_faculty.facultyCourse,
+                  }
+              },
+            ],
+                "suggestions": [
+                  {
+                    "title": "View Faculty"
+                  },
+                  {
+                    "title": "View Courses"
+                  }
+                ],              
+            }
+          },
+        },
+      })
+  
+    }
 
 module.exports = hObj

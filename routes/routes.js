@@ -52,6 +52,9 @@ router.post('/Bing_bot',async (req,res)=>{
   }
   else if(req.body.result.metadata.intentName === 'showFaculty'){
     facultyHandler.showFaculty(req,res)
+  } 
+  else if(req.body.result.metadata.intentName === 'showFaculty_followUp'){
+    facultyHandler.showFaculty_single(req,res)
   }
 
 })
