@@ -5,7 +5,7 @@
             "facultyContact" : "123432",
             "facultyID" : "BFA#01",
             "facultyEmail" : "aka@a.com",
-            "facultyCourse" : "Database Management",
+            "facultyCourse" : "Advance Data Structures",
             "officeHours" : "5"
         },
         {
@@ -23,6 +23,15 @@
             "facultyEmail" : "aka@a.com",
             "facultyCourse" : "Database Management",
             "officeHours" : "5"
+        },
+        {
+            "facultyName":"Sameera Johnson",
+            "facultyContact":"4332123431",
+            "facultyID":"BFA#04",
+            "facultyEmail":"sameera@gmail.com",
+            "facultyCourse":"Computer Networks",
+            "officeHours":"4"
+           
         }
     ]
 }

@@ -1,0 +1,24 @@
+{
+    "course_data":[
+        {
+            "courseName":"Advance Data Structures",
+            "courseID":"C#01",
+            "examDate":""   
+        },
+        {
+            "courseName":"Database Management",
+            "courseID":"C#02",
+            "examDate":""   
+        },
+        {
+            "courseName":"Computer Networks",
+            "courseID":"C#03",
+            "examDate":""
+        },
+        {
+            "courseName":"Operating Systems",
+            "courseID":"C#04",
+            "examDate":""
+        }
+    ]
+}
