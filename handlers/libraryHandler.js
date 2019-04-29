@@ -28,14 +28,14 @@ return res.json({
           "items": [
             {
               "simpleResponse": {
-                "textToSpeech": "Library Timings for " + lb_timings.day
+                "textToSpeech": "Okay..!! Here are the required details"
               }
             },
             {
               "basicCard": {
-                  "title": lb_timings.day,
-                  "subtitle":"Timings",
-                  "formattedText": "**"+lb_timings.timings+"** ",
+                  "title": "Library Hours" ,
+                  "subtitle":"Day - "+lb_timings.day,
+                  "formattedText": "**Timings** : **"+lb_timings.timings+"** ",
               }
           },
         ],
