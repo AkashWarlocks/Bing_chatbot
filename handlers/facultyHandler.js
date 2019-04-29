@@ -33,7 +33,10 @@ hObj.showFaculty = async(req,res)=>{
             "key": faculty_db.facultydata[i].facultyID,
           },
           "description": faculty_db.facultydata[i].facultyID,
-          "image": {},          
+          "image":{
+            "url": "",
+            "accessibilityText": ""
+          },          
           "title": faculty_db.facultydata[i].facultyName
         },
       )
@@ -66,7 +69,7 @@ hObj.showFaculty = async(req,res)=>{
             }
           }
         }
-      }
+      } 
     })
 }
 
