@@ -3,7 +3,17 @@ let hObj={}
 
 hObj.libraryTimings = async(req,res) => {
 //console.log("lib: ",req.body.result)
-var date = new Date(req.body.result.parameters.day)
+if(!(req.body.result &&
+    req.body.result.parameters &&
+    req.body.result.parameters.day)){
+        return res.json({
+            speech: "Yes buddy I can. Please give the day so that i can search for you",
+                displayText: "Please enter the day",
+                source:"google"
+        })
+    }
+    else{
+        var date = new Date(req.body.result.parameters.day)
 var day = date.getDay()
 var lb_timings = {
     "day":"",
@@ -51,5 +61,7 @@ return res.json({
       },
     },
   })
+
+    }
 }
 module.exports = hObj
