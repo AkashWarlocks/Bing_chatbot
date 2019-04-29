@@ -81,8 +81,8 @@ hObj.raiseIssue = async(req,res) =>{
                         source:"google"
                     })    
                 } else{
-                    console.log(student_data)
-                    console.log(faculty_data)
+                    //console.log(student_data)
+                    //console.log(faculty_data)
                     var issue_data = {
                         "issueType":req.body.result &&
                         req.body.result.parameters &&
@@ -92,20 +92,57 @@ hObj.raiseIssue = async(req,res) =>{
                         req.body.result.parameters.desc,
                         "raisedBy":student_data.BNo ||faculty_data.facultyID
                     }
-                    console.log(issue_data)
+                   // console.log(issue_data)
 
                     const issue_raised = new Issue(issue_data)
                     await issue_raised.save()
                     return res.json({
                         speech: "Issue Raised",
                         displayText: "Issue Raised",
-                        source:"google"
+                        source:"google",
+                        "data": {
+                            "google": {
+                              "expectUserResponse": true,
+                              "richResponse": {
+                                "items": [
+                                  {
+                                    "simpleResponse": {
+                                      "textToSpeech": "Hey "+(student_data.StudentName||faculty_data.facultyName)+ "your issue regarding "+issue_data.issueType+" has been raised successfully",
+                                      "displayText":"Issue Raise Successfully. Please Select your next action.  \nTo view your issues you can select View Issues Chip Below"
+                                    }
+                                  },
+                                  
+                                ],
+                                "suggestions": [
+                                  {
+                                    "title": "View Issues"
+                                  },
+                                  {
+                                    "title": "Raise Issue"
+                                  },
+                                  {
+                                    "title": "View Faculty"
+                                  },
+                                  {
+                                      "title":"View Courses"
+                                  }
+                                ],
+                        
+                              }
+                            }
+                        }
+        
                     })  
 
                 }
                 
                 
             }catch(e){
+                return res.json({
+                    speech: "We Regret for inconvience there is some error",
+                    displayText: "Please try again afte some time",
+                    source:"google"
+                })
                 
             }
             
