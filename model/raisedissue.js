@@ -10,9 +10,6 @@ const raisedIssueSchema = new mongoose.Schema({
     raisedBy:{
         type:String
     },
-    issueID:{
-        type:String
-    }
 })
 
 const ra_issued = mongoose.model('raised_issues',raisedIssueSchema)

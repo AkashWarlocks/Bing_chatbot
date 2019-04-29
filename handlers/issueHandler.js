@@ -1,3 +1,9 @@
+require('../db/mongoose')
+
+const Student = require('../model/student')
+const Issue = require('../model/raisedissue')
+const Faculty = require('../model/faculty')
+
 let hObj ={}
 hObj.raiseIssue = async(req,res) =>{
     if(!(req.body.result &&
@@ -24,7 +30,7 @@ hObj.raiseIssue = async(req,res) =>{
                           {
                             "simpleResponse": {
                               "textToSpeech": "Following are the types of issues you can Raise please select one of them from the suggestion chips provided below",
-                              "displayText":"**ISSUE LIST**  \n1. Hardware  \n2.Internet  \3.Account  \n4.ID card"
+                              "displayText":"**ISSUE LIST**  \n1. Hardware  \n2.Internet  \n3.Account  \n4.ID card"
                             }
                           },
                           
@@ -59,11 +65,48 @@ hObj.raiseIssue = async(req,res) =>{
     
             })
         } else {
-            return res.json({
-                speech: "Issue Raised",
-                displayText: "Issue Raised",
-                source:"google"
-        })
+            try{
+                var id = req.body.result &&
+                req.body.result.parameters &&
+                req.body.result.parameters.id
+
+                const student_data =  await Student.findOne({"BNo":id})
+                const faculty_data = await Faculty.findOne({"facultyID":id})
+
+                if((!student_data) && (!faculty_data)) {
+                    
+                    return res.json({
+                        speech: "ID you have entered is wrong",
+                        displayText: "Please Raise the request again with correct ID",
+                        source:"google"
+                    })    
+                } else{
+                    console.log(student_data)
+                    console.log(faculty_data)
+                    var issue_data = {
+                        "issueType":req.body.result &&
+                        req.body.result.parameters &&
+                        req.body.result.parameters.issues,
+                        "description":req.body.result &&
+                        req.body.result.parameters &&
+                        req.body.result.parameters.desc,
+                        "raisedBy":student_data.Bno ||faculty_data.facultyID
+                    }
+
+                    var issue_raised = new Issue(issue_data)
+                    return res.json({
+                        speech: "Issue Raised",
+                        displayText: "Issue Raised",
+                        source:"google"
+                    })  
+
+                }
+                
+                
+            }catch(e){
+                
+            }
+            
     }
 }
 
