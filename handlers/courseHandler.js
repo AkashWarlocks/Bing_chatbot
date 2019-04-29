@@ -88,7 +88,7 @@ hObj.singleCourse = async(req,res)=>{
       single_course.courseID = course_db.course_data[i].courseID  
     }
   }
-  console.log("single emp", single_course)
+  console.log("single Course", single_course)
   res.json({
         "speech": "Name of Faculty is "+single_course.courseName,
         "displayText": "This card contains all the details of ticket you have selected",   
