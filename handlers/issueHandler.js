@@ -90,8 +90,9 @@ hObj.raiseIssue = async(req,res) =>{
                         "description":req.body.result &&
                         req.body.result.parameters &&
                         req.body.result.parameters.desc,
-                        "raisedBy":student_data.Bno ||faculty_data.facultyID
+                        "raisedBy":student_data.BNo ||faculty_data.facultyID
                     }
+                    console.log(issue_data)
 
                     const issue_raised = new Issue(issue_data)
                     await issue_raised.save()
