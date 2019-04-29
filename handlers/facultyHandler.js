@@ -116,9 +116,9 @@ hObj.showFaculty_single = async(req,res)=>{
                 },
                 {
                   "basicCard": {
-                      "title": "Facutly Name" +single_faculty.facultyName,
+                      "title": single_faculty.facultyName,
                       "subtitle":"ID " +single_faculty.facultyID,
-                      "formattedText": "**Contact:** " +single_faculty.facultyContact+"  \n**Email:** "+single_faculty.facultyCourse+"  \n**Courses:** "+single_faculty.facultyCourse,
+                      "formattedText": "**Contact:** " +single_faculty.facultyContact+"  \n**Email:** "+single_faculty.facultyEmail+"  \n**Courses:** "+single_faculty.facultyCourse,
                   }
               },
             ],
@@ -128,6 +128,9 @@ hObj.showFaculty_single = async(req,res)=>{
                   },
                   {
                     "title": "View Courses"
+                  },
+                  {
+                    "title":"Library Timings"
                   }
                 ],              
             }
