@@ -64,7 +64,7 @@ router.post('/Bing_bot',async (req,res)=>{
     courseHandler.singleCourse(req,res)
   } else if(req.body.result.metadata.intentName === 'libraryTimings'){
     libraryHandler.libraryTimings(req,res)
-  } else if(req,body.result.metadata.intentName === 'raiseIssue'){
+  } else if(req.body.result.metadata.intentName === 'raiseIssue'){
     issueHandler.raiseIssue(req,res)
   }
 
