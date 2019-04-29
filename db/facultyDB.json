@@ -6,15 +6,17 @@
             "facultyID" : "BFA#01",
             "facultyEmail" : "aka@a.com",
             "facultyCourse" : "Advance Data Structures",
-            "officeHours" : "5"
+            "officeHours" : "5",
+            "taCode":"BS#04"
         },
         {
             "facultyName" : "Andre Russel",
             "facultyContact" : "123432",
             "facultyID" : "BFA#02",
             "facultyEmail" : "aka@a.com",
-            "facultyCourse" : "Operating SYstems",
-            "officeHours" : "5"
+            "facultyCourse" : "Operating Systems",
+            "officeHours" : "5",
+            "taCode":"BS#01"
         },
         {
             "facultyName" : "Zi Longi",
@@ -22,7 +24,8 @@
             "facultyID" : "BFA#03",
             "facultyEmail" : "aka@a.com",
             "facultyCourse" : "Database Management",
-            "officeHours" : "5"
+            "officeHours" : "5",
+            "taCode":""
         },
         {
             "facultyName":"Sameera Johnson",
@@ -30,7 +33,28 @@
             "facultyID":"BFA#04",
             "facultyEmail":"sameera@gmail.com",
             "facultyCourse":"Computer Networks",
-            "officeHours":"4"
+            "officeHours":"4",
+            "taCode":"BS#07"
+           
+        },
+        {
+            "facultyName":"Alex Ramsey",
+            "facultyContact":"4332123431",
+            "facultyID":"BFA#05",
+            "facultyEmail":"ramsey@gmail.com",
+            "facultyCourse":"Distributed Systems",
+            "officeHours":"6",
+            "taCode":""
+           
+        },
+        {
+            "facultyName":"Kate Wilson",
+            "facultyContact":"4332123731",
+            "facultyID":"BFA#06",
+            "facultyEmail":"kate@gmail.com",
+            "facultyCourse":"Machine Learning",
+            "officeHours":"4",
+            "taCode":""
            
         }
     ]

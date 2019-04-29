@@ -4,6 +4,7 @@ let facultyHandler = require('../handlers/facultyHandler')
 const Faculty = require('../model/faculty')
 let courseHandler = require('../handlers/courseHandler')
 let libraryHandler = require('../handlers/libraryHandler')
+let issueHandler = require('../handlers/issueHandler')
 
 //const MongoClient = require('mongodb').MongoClient;
 // const uri = "mongodb+srv://user:mruaka123@cluster0-3awwl.mongodb.net/admin?retryWrites=true";
@@ -63,6 +64,8 @@ router.post('/Bing_bot',async (req,res)=>{
     courseHandler.singleCourse(req,res)
   } else if(req.body.result.metadata.intentName === 'libraryTimings'){
     libraryHandler.libraryTimings(req,res)
+  } else if(req,body.result.metadata.intentName === 'raiseIssue'){
+    issueHandler.raiseIssue(req,res)
   }
 
 })

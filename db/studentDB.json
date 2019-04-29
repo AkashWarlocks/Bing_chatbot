@@ -1,0 +1,68 @@
+{
+    "student_data":[
+        {
+            "StudentName":"Mathew Perry",
+            "Contact":"412941243",
+            "Email":"matthew@gmail.com",
+            "BNo":"BS#01",
+            "Year":"Freshman",
+            "CourseID":"C#01,C#03"   
+        },
+        {
+            "StudentName":"Nutan Kulkarni",
+            "Contact":"4129231243",
+            "Email":"mutan@gmail.com",
+            "BNo":"BS#02",
+            "Year":"Senior",
+            "CourseID":"C#01,C#03"   
+        },
+        {
+            "StudentName":"Steven Gerrard",
+            "Contact":"1242941243",
+            "Email":"steven@gmail.com",
+            "BNo":"BS#04",
+            "Year":"Freshman",
+            "CourseID":"C#05,C#03"   
+        },
+        {
+            "StudentName":"lionel Messi",
+            "Contact":"412941763",
+            "Email":"messi@gmail.com",
+            "BNo":"BS#05",
+            "Year":"Freshman",
+            "CourseID":"C#01,C#03"   
+        },
+        {
+            "StudentName":"Adam Chandler",
+            "Contact":"4123921247",
+            "Email":"adam@gmail.com",
+            "BNo":"BS#06",
+            "Year":"Senior",
+            "CourseID":"C#01,C#03"   
+        },
+        {
+            "StudentName":"Eve Torres",
+            "Contact":"412941243",
+            "Email":"eve@gmail.com",
+            "BNo":"BS#07",
+            "Year":"Freshman",
+            "CourseID":"C#02,C#04"   
+        },
+        {
+            "StudentName":"Simran Joshi",
+            "Contact":"1129941243",
+            "Email":"simran@gmail.com",
+            "BNo":"BS#08",
+            "Year":"Senior",
+            "CourseID":"C#02,C#03"   
+        },
+        {
+            "StudentName":"Alex Perry",
+            "Contact":"4129412453",
+            "Email":"alex@gmail.com",
+            "BNo":"BS#09",
+            "Year":"Freshman",
+            "CourseID":"C#01,C#03"   
+        }
+    ]
+}
