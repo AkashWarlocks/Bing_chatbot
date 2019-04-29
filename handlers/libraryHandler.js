@@ -3,7 +3,7 @@ let hObj={}
 
 hObj.libraryTimings = async(req,res) => {
 //console.log("lib: ",req.body.result)
-var date = new Date(req.body.result.parameters.id)
+var date = new Date(req.body.result.parameters.day)
 var day = date.getDay()
 var lb_timings = {
     "day":"",
