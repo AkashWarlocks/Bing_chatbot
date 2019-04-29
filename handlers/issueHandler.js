@@ -93,7 +93,8 @@ hObj.raiseIssue = async(req,res) =>{
                         "raisedBy":student_data.Bno ||faculty_data.facultyID
                     }
 
-                    var issue_raised = new Issue(issue_data)
+                    const issue_raised = new Issue(issue_data)
+                    await issue_raised.save()
                     return res.json({
                         speech: "Issue Raised",
                         displayText: "Issue Raised",
