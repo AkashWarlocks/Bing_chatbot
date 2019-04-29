@@ -11,7 +11,7 @@
         {
             "facultyName" : "Andre Russel",
             "facultyContact" : "123432",
-            "facultyID" : "BFA#01",
+            "facultyID" : "BFA#02",
             "facultyEmail" : "aka@a.com",
             "facultyCourse" : "Operating SYstems",
             "officeHours" : "5"
@@ -19,7 +19,7 @@
         {
             "facultyName" : "Zi Longi",
             "facultyContact" : "123432",
-            "facultyID" : "BFA#01",
+            "facultyID" : "BFA#03",
             "facultyEmail" : "aka@a.com",
             "facultyCourse" : "Database Management",
             "officeHours" : "5"
