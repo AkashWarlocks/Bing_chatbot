@@ -1,9 +1,16 @@
 require('../db/mongoose')
-const course_db = require('../db/courseDB.json')
+const Course = require('../model/courses')
 
 let hObj = {}
 
 hObj.showCourses = async(req,res)=>{
+    try{
+        const courses_data = await Course.find()
+    }catch(e){
+
+    }
+    
+
     if(course_db.course_data.length===0){
         return res.json({
             "payload": {

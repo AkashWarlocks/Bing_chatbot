@@ -18,10 +18,13 @@ const facultySchema = new mongoose.Schema({
     },
     officeHours:{
         type:String
+    },
+    taCode:{
+        type:String
     }
 
 })
 
-const Faculty = mongoose.model('Faculty',facultySchema)
+const Faculty = mongoose.model('faculties',facultySchema)
 
 module.exports = Faculty
