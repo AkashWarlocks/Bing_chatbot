@@ -303,7 +303,7 @@ hObj.singleIssueList = async (req,res)=>{
 
   console.log('id: '+id)
   var user_name = ""
-  const view_data = await Issue.findById(id)
+  const view_data = await Issue.findOne({"_id":id})
   var user_id = view_data.raisedBy
   const student_data = await Student.findOne({"BNo":user_id})
   const faculty_data = await Faculty.findOne({"facultyID":user_id})
