@@ -246,7 +246,7 @@ hObj.viewIssues = async(req,res)=>{
             "title": "Issue"
           })
         }
-        console.log("list of issues"+resp+"\nUsername:",user_name)
+        console.log("list of issues"+resp+"\nUsername:",user_name,"\n length",view_data.length)
         return res.json({
           "speech": "Okay I will get list of issues raised in the form of list",
           "displayText": "Now you can see all the issue raised.",
