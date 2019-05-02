@@ -132,6 +132,9 @@ hObj.showFaculty_single = async(req,res)=>{
                   },
                   {
                     "title":"Library Timings"
+                  },
+                  {
+                    "title":"Main Menu"
                   }
                 ],              
             }

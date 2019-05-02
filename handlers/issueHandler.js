@@ -247,7 +247,7 @@ hObj.viewIssues = async(req,res)=>{
               "url": "",
               "accessibilityText": ""
             },          
-            "title": "Issue Of: "+i
+            "title": (i+1)+". Issue"
           })
         }
         console.log("list of issues"+resp)
@@ -283,13 +283,42 @@ hObj.viewIssues = async(req,res)=>{
       }
       
     }catch(e){
-  
-      console.log(e)
-      return res.json({
-        speech: "We Regret for inconvience there is some error",
-        displayText: "Please try again afte some time",
-        source:"google"
-    })
+    
+        console.log(e)
+        return res.json({
+          "speech": "We Regret for inconvience there is some error",
+          "displayText": "Please try again afte some time",
+          "source":"google",
+          "data": {
+            "google": {
+              "expectUserResponse": true,
+              "richResponse": {
+                "items": [
+                  {
+                    "simpleResponse": {
+                      "textToSpeech": "We Regret for inconvience. Please try again after some time "
+                    }
+                  },
+                  
+              ],
+                  "suggestions": [
+                    {
+                      "title": "View Faculty"
+                    },
+                    {
+                      "title": "View Courses"
+                    },
+                    {
+                      "title":"Library Timings"
+                    },
+                    {
+                      "title":"Raise Issue"
+                    }
+                  ],              
+              }
+            },
+          }
+      })
     }
   
   }  
@@ -303,8 +332,8 @@ hObj.singleIssueList = async (req,res)=>{
 
   console.log('id: '+id)
   var user_name = ""
-  issue_id = JSON.parse(id)
-  const view_data = await Issue.findOne({"_id":issue_id})
+  try{
+    const view_data = await Issue.findOne({"_id":JSON.parse(id)})
   var user_id = view_data.raisedBy
   const student_data = await Student.findOne({"BNo":user_id})
   const faculty_data = await Faculty.findOne({"facultyID":user_id})
@@ -357,6 +386,46 @@ hObj.singleIssueList = async (req,res)=>{
     },
   })
 
+  } catch(e){
+      
+    console.log(e)
+    return res.json({
+      "speech": "We Regret for inconvience there is some error",
+      "displayText": "Please try again afte some time",
+      "source":"google",
+      "data": {
+        "google": {
+          "expectUserResponse": true,
+          "richResponse": {
+            "items": [
+              {
+                "simpleResponse": {
+                  "textToSpeech": "We Regret for inconvience. Please try again after some time "
+                }
+              },
+              
+          ],
+              "suggestions": [
+                {
+                  "title": "View Faculty"
+                },
+                {
+                  "title": "View Courses"
+                },
+                {
+                  "title":"Library Timings"
+                },
+                {
+                  "title":"Raise Issue"
+                }
+              ],              
+          }
+        },
+      }
+    })
+  }
 }
+  
+
 
 module.exports = hObj

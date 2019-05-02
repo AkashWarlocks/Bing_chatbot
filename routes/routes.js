@@ -5,6 +5,7 @@ const Faculty = require('../model/faculty')
 let courseHandler = require('../handlers/courseHandler')
 let libraryHandler = require('../handlers/libraryHandler')
 let issueHandler = require('../handlers/issueHandler')
+let mainMenuHandler = require('../handlers/mainMenuHandler')
 
 //const MongoClient = require('mongodb').MongoClient;
 // const uri = "mongodb+srv://user:mruaka123@cluster0-3awwl.mongodb.net/admin?retryWrites=true";
@@ -70,7 +71,9 @@ router.post('/Bing_bot',async (req,res)=>{
     issueHandler.viewIssues(req,res)
   } else if(req.body.result.metadata.intentName === 'singleIssueList'){
     issueHandler.singleIssueList(req,res)
+  } else if(req.body.result.metadata.intentName === 'mainMenuHandler'){
+    mainMenuHandler.mainMenu(req,res)
   }
     
 })
-module.exports = router
+module.exports = router 
