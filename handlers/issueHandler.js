@@ -313,6 +313,9 @@ hObj.viewIssues = async(req,res)=>{
                     },
                     {
                       "title":"Raise Issue"
+                    },
+                    {
+                      "title":"Main Menu"
                     }
                   ],              
               }
