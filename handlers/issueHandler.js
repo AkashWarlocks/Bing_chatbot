@@ -235,9 +235,10 @@ hObj.viewIssues = async(req,res)=>{
       } else {
         var resp = []
         for(var i = 0;i<view_data.length;i++){
+          console.log("type of ID",typeof(view_data[i]._id))
           resp.push({
             "optionInfo": {
-              "key": view_data[i]._id,
+              "key":view_data[i]._id,
             },
             "description": view_data[i].issueType,
             "image":{
