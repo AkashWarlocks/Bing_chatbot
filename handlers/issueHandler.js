@@ -150,30 +150,37 @@ hObj.raiseIssue = async(req,res) =>{
 }
 
 hObj.viewIssues = async(req,res)=>{
-  
   var id = req.body.result &&
   req.body.result.parameters &&
   req.body.result.parameters.id
 
-
-  try{
-    const view_data = await Issue.find({"raisedBy":id})
-    console.log(view_data)
+  if(!id){
     return res.json({
-      speech: "We Regret for inconvience there is some error",
-      displayText: "Work in progress",
+      speech: "Please can you give me your ID",
+      displayText: "StudentID / faculty ID",
       source:"google"
-  })
 
-  }catch(e){
-
-    console.log(e)
-    return res.json({
-      speech: "We Regret for inconvience there is some error",
-      displayText: "Please try again afte some time",
-      source:"google"
-  })
-  }
-
+    })
+  } else {
+    try{
+      const view_data = await Issue.find({"raisedBy":id})
+      console.log(view_data)
+      return res.json({
+        speech: "We Regret for inconvience there is some error",
+        displayText: "Work in progress",
+        source:"google"
+    })
+  
+    }catch(e){
+  
+      console.log(e)
+      return res.json({
+        speech: "We Regret for inconvience there is some error",
+        displayText: "Please try again afte some time",
+        source:"google"
+    })
+    }
+  
+  }  
 }
 module.exports = hObj
