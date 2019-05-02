@@ -13,7 +13,7 @@ const facultySchema = new mongoose.Schema({
     facultyID:{
         type:String
     },
-    facultyCourses:{
+    facultyCourse:{
         type:String
     },
     officeHours:{
