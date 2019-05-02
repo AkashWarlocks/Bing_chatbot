@@ -71,7 +71,7 @@ router.post('/Bing_bot',async (req,res)=>{
     issueHandler.viewIssues(req,res)
   } else if(req.body.result.metadata.intentName === 'singleIssueList'){
     issueHandler.singleIssueList(req,res)
-  } else if(req.body.result.metadata.intentName === 'mainMenuHandler'){
+  } else if(req.body.result.metadata.intentName === 'mainMenu'){
     mainMenuHandler.mainMenu(req,res)
   }
     
