@@ -99,7 +99,9 @@ hObj.showFaculty_single = async(req,res)=>{
 
   try{
     
-    const single_faculty = await Faculty.findById(id)
+    const single_faculty = await Faculty.findOne({
+      "facultyID":id })
+
     console.log("single emp", single_faculty)
     res.json({
         "speech": "Name of Faculty is "+single_faculty.facultyName,
