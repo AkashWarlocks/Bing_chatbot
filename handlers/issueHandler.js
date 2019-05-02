@@ -236,9 +236,10 @@ hObj.viewIssues = async(req,res)=>{
         var resp = []
         for(var i = 0;i<view_data.length;i++){
           console.log("type of ID",typeof(view_data[i]._id))
+          var user_id = JSON.stringify(view_data[i]._id)
           resp.push({
             "optionInfo": {
-              "key":view_data[i]._id,
+              "key":user_id,
             },
             "description": view_data[i].issueType,
             "image":{
