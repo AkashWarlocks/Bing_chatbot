@@ -179,16 +179,17 @@ hObj.viewIssues = async(req,res)=>{
       if(view_data.length === 0){
         if(!user_name){
           return res.json({
-            speech: "Hey "+user_name+" you dont have any issue raised. To raise a issue please click on raise issue",
-            displayText: "No issues raised by "+user_name,
-            source:"google"  
-        })
+            speech: "You have entered a wrong ID",
+            displayText: "Please Enter a valid Student/Faculty ID",
+            source:"google"
+        })   
       } else {
         return res.json({
-          speech: "You have entered a wrong ID",
-          displayText: "Please Enter a valid Student/Faculty ID",
-          source:"google"
+          speech: "Hey "+user_name+" you dont have any issue raised. To raise a issue please click on raise issue",
+          displayText: "No issues raised by "+user_name,
+          source:"google"  
       })
+        
       }
         
       } else if(view_data.length === 1){
@@ -231,12 +232,12 @@ hObj.viewIssues = async(req,res)=>{
             },
           },
         })  
-      } else{
+      } else {
         var resp = []
         for(var i = 0;i<view_data.length;i++){
           resp.push({
             "optionInfo": {
-              "key": "w"+i,
+              "key": view_data[i]._id,
             },
             "description": view_data[i].issueType,
             "image":{
@@ -244,7 +245,7 @@ hObj.viewIssues = async(req,res)=>{
               "accessibilityText": ""
             },          
             "title": "Issue"
-          })
+          },)
         }
         console.log("list of issues"+resp+"\nUsername:",user_name,"\n length",view_data.length)
         return res.json({
@@ -277,8 +278,6 @@ hObj.viewIssues = async(req,res)=>{
         })
       }
       
-      
-  
     }catch(e){
   
       console.log(e)
