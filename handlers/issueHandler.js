@@ -238,7 +238,7 @@ hObj.viewIssues = async(req,res)=>{
           console.log("type of ID",typeof(JSON.stringify(view_data[i]._id)))
           var user_id = JSON.stringify(view_data[i]._id)
           resp.push(
-            {
+            {   
             "optionInfo": {
               "key": JSON.stringify(view_data[i]._id),
             },
@@ -300,6 +300,8 @@ hObj.singleIssueList = async (req,res)=>{
   var id = req.body.result &&
   req.body.result.parameters &&
   req.body.result.parameters.id
+
+  console.log('id: '+id)
   var user_name = ""
   const view_data = await Issue.findById(id)
   var user_id = view_data.raisedBy

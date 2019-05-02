@@ -66,7 +66,11 @@ router.post('/Bing_bot',async (req,res)=>{
     libraryHandler.libraryTimings(req,res)
   } else if(req.body.result.metadata.intentName === 'raiseIssue'){
     issueHandler.raiseIssue(req,res)
-  } else if(req.body.result.metadata.intentName === 'viewIssues')
+  } else if(req.body.result.metadata.intentName === 'viewIssues'){
     issueHandler.viewIssues(req,res)
+  } else if(req.body.result.metadata.intentName === 'singleIssueList'){
+    issueHandler.singleIssueList(req,res)
+  }
+    
 })
 module.exports = router
