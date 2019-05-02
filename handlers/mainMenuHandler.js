@@ -1,8 +1,11 @@
 let hObj = {}
 
 hObj.mainMenu = async(req,res) => {
+    console.log("Main menu: ",res)
     res.json({
-        "payload": {
+        "speech": "Name of Faculty is ",
+        "displayText": "This card contains all the details of ticket you have selected",   
+        "data": {
             "google": {
               "expectUserResponse": true,
               "richResponse": {
@@ -33,23 +36,7 @@ hObj.mainMenu = async(req,res) => {
                     }
                   }
                 ],
-                "suggestions":[
-                    {
-                        "title": "View Faculty"
-                      },
-                      {
-                        "title": "View Courses"
-                      },
-                      {
-                        "title":"Library Timings"
-                      },
-                      {
-                        "title":"Raise Issue"
-                      },
-                      {
-                        "title":"View Issues"
-                      }
-                ]   
+                   
               }
             }
           }
