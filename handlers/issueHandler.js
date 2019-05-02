@@ -256,7 +256,7 @@ hObj.viewIssues = async(req,res)=>{
                 "items": [
                   {
                     "simpleResponse": {
-                      "textToSpeech": "Dear "+username+" you have raised "+view_data.length+" issues"
+                      "textToSpeech": "Dear "+user_name+" you have raised "+view_data.length+" issues"
                     }
                   }
                 ]
