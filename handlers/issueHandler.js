@@ -247,7 +247,7 @@ hObj.viewIssues = async(req,res)=>{
               "url": "",
               "accessibilityText": ""
             },          
-            "title": "Issue Of: "+user_name
+            "title": "Issue Of: "+i
           })
         }
         console.log("list of issues"+resp)
