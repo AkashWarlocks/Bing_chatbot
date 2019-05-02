@@ -139,8 +139,9 @@ hObj.showFaculty_single = async(req,res)=>{
       })
   
   }catch(e){
+    console.log(e)
     return res.json({
-      speech: "We Regret for inconvience there is some error",
+      speech: "We Regret for inconvience there is some error ",
       displayText: "Please try again afte some time",
       source:"google"
   })
