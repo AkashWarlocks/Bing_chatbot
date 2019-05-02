@@ -28,7 +28,7 @@ hObj.showFaculty = async(req,res)=>{
             }
       })
   }   else  {
-      var resp= []
+      var resp = []
       var i;
       for (i = 0; i<facultydata.length; i++) {
       console.log(facultydata[i].facultyName)
@@ -43,9 +43,8 @@ hObj.showFaculty = async(req,res)=>{
               "accessibilityText": ""
             },          
             "title": facultydata[i].facultyName
-          },
-        )
-                }
+          },)
+        }
         console.log(resp)  
   
       return res.json({
